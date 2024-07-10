@@ -1,19 +1,24 @@
+import {useState} from 'react'
 import {MapPin, Calendar, ArrowRight} from 'lucide-react'
 
-import "./index.css"
-
 export function App() {
+
+  const [isGuestInputOpen, setIsGuestInputOpen] = userState<boolean>(false);
+
   return (
-    <div className="w-full h-screen flex items-center justify-center">
+    <div className="w-full h-screen flex items-center justify-center bg-pattern bg-no-repeat bg-center ">
       <div className="max-w-[720px] w-full px-6 text-center space-y-10">
-        <p className="text-zinc-300 text-lg ">
-          Convide seus amigos e planeje sua próxima viagem!
-        </p>
+        <div className='flex flex-col items-center gap-3'>
+          <img src='/logo.svg' alt="" />
+          <p className="text-zinc-300 text-lg ">
+            Convide seus amigos e planeje sua próxima viagem!
+          </p>
+        </div>
 
         <div className="h-16 bg-zinc-900 px-4 rounded-xl flex items-center gap-3 shadow-shape">
           <div className='flex items-center flex-1 gap-2'>
             <MapPin className='size-5 text-zinc-400'/>
-            <input type="text" placeholder="Para onde vcê vai?" className="text-large placeholder:text-zinc-400 bg-transparent outline-none" />
+            <input type="text" placeholder="Para onde vcê vai?" className="flex-1 text-large placeholder:text-zinc-400 bg-transparent outline-none" />
           </div>
           
           <div className='flex items-center gap-2 '>
